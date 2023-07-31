@@ -1,0 +1,92 @@
+﻿<Window x:Class="HRDownpatch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRDownpatch"
+        mc:Ignorable="d"
+        Icon="thumbs_down.ico"
+        Title="HR Downpatch" Height="720" Width="1280" GotFocus="Window_GotFocus">
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskBarItem"/>
+    </Window.TaskbarItemInfo>
+    <Grid>
+        <!--<Grid.RenderTransform>
+            <ScaleTransform ScaleX="1.5" ScaleY="1.5"></ScaleTransform>
+        </Grid.RenderTransform>-->
+        <!--<StackPanel>
+            <ListBox>
+                
+            </ListBox>
+        </StackPanel>-->
+        <DockPanel Background="WhiteSmoke">
+            <!--<DockPanel DockPanel.Dock="Top">
+                <DockPanel DockPanel.Dock="Left">
+                    
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Right">
+                    
+                </DockPanel>
+            </DockPanel>-->
+
+            <Grid DockPanel.Dock="Top" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btn_ChangeDownload" Grid.Column="0" Margin="2" Padding="2" Click="btn_ChangeDownload_Click" >Change Download Location...</Button>
+                    <TextBox x:Name="tb_DownloadLocation" Text="{Binding DownloadLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"  Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                </Grid>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Button x:Name="btn_SelectDepots" Margin="2" Padding="2" Click="btn_SelectDepots_Click">Select Depots...</Button>
+                    <TextBlock x:Name="tb_SelectedDepots" VerticalAlignment="Center" Text="Select some depots!"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Label>Steam Username</Label>
+                    <PasswordBox x:Name="tb_Username" VerticalAlignment="Center" MinWidth="150"></PasswordBox>
+                    <Label>Steam Password</Label>
+                    <PasswordBox x:Name="tb_Password" VerticalAlignment="Center" MinWidth="150"></PasswordBox>
+                </StackPanel>
+
+                
+                
+            </Grid>
+
+            <Button DockPanel.Dock="Top" x:Name="btn_Start" Content="Begin Download" Click="btn_Start_Click" Margin="2" Padding="2"/>
+            <Button DockPanel.Dock="Top" x:Name="btn_Kill" Content="Kill steamcmd" Margin="2" Padding="2" Click="btn_Kill_Click" IsEnabled="False"/>
+
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="tb_CurrentDepot" Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="tb_CurrentDownloadSize" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+            
+            <Grid DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.5*" />
+                </Grid.RowDefinitions>
+                <ScrollViewer x:Name="sv_Log" Grid.Row="0" Background="LightGray">
+                    <TextBlock x:Name="tb_Log" />
+                </ScrollViewer>
+                <ScrollViewer Name="sv_LogSteam" Grid.Row="1" Background="AntiqueWhite">
+                    <TextBlock x:Name="tb_LogSteam" />
+                </ScrollViewer>
+            </Grid>
+            
+        </DockPanel>
+    </Grid>
+</Window>

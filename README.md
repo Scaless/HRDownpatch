@@ -1,2 +1,2 @@
 # HRDownpatch
-Simple wrapper of DepotDownloader for easier MCC/Infinite downpatching
+Simple wrapper for SteamCMD to download old MCC/Infinite patches.
