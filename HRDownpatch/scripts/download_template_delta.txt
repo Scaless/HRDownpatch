@@ -1,0 +1,8 @@
+@ShutdownOnFailedCommand 1
+@NoPromptForPassword 1
+
+set_spew_level 3 3
+login {0} {1}
+download_depot {2} {3} {4} {5}
+
+quit

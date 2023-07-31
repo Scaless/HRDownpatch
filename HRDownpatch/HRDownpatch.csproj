@@ -23,4 +23,16 @@
     <Resource Include="thumbs_down.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="scripts\download_template.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="scripts\download_template_delta.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="scripts\setup.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
